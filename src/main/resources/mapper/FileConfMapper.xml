@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.FileConfMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.entity.FileConf">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="bizType" column="biz_type" jdbcType="VARCHAR"/>
+        <result property="fileTypeLimit" column="file_type_limit" jdbcType="VARCHAR"/>
+        <result property="fileSizeLimit" column="file_size_limit" jdbcType="VARCHAR"/>
+        <result property="multiFileSizeLimit" column="multi_file_size_limit" jdbcType="VARCHAR"/>
+        <result property="path" column="path" jdbcType="VARCHAR"/>
+        <result property="resourceRealm" column="resource_realm" jdbcType="VARCHAR"/>
+        <result property="delType" column="del_type" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="enabled" column="enabled" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,biz_type,file_type_limit,
+        file_size_limit,multi_file_size_limit,path,
+        resource_realm,del_type,description,
+        enabled,create_time,update_time
+    </sql>
+</mapper>

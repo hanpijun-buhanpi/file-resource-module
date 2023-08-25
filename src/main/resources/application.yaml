@@ -1,0 +1,54 @@
+# 服务配置
+server:
+  port: 8080
+  # 错误配置
+  error:
+    # 是否插入错误消息（生产环境请使用默认的never）
+    include-message: always
+
+# Spring配置
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&useSSL=false&autoReconnect=true&characterEncoding=utf8
+    username: root
+    password: root
+
+# MybatisPlus配置
+mybatis-plus:
+  # 指定mapper.xml文件的路径
+  mapper-locations:
+    - classpath*:/mapper/**/*.xml
+  # 指定实体类的包路径
+  type-aliases-package: org.example
+  configuration:
+    # 驼峰命名转换
+    map-underscore-to-camel-case: true
+    # SQL日志打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 开启null值注入（用在Map对象的注入上）
+    call-setters-on-nulls: true
+  global-config:
+    # 关闭banner的打印
+    banner: false
+
+# knife4j openapi2配置
+knife4j:
+  enable: true
+  openapi:
+    title: Knife4j官方文档
+    description: "`我是测试"
+    email: xiaoymin@foxmail.com
+    concat: 八一菜刀
+    url: https://docs.xiaominfo.com
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      file-resource:
+        group-name: 文件资源管理
+        api-rule: package
+        api-rule-resources:
+          - org.example
